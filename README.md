@@ -51,39 +51,34 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | ----------- | ----------------------------------------- | ---------------------------------------------- |
 | LLaVA-Bench | [Visual instruction tuning](https://arxiv.org/abs/2304.08485) | [GitHub](https://github.com/haotian-liu/LLaVA) |
 | MIA-Bench   | [Mia-bench: Towards better instruction following evaluation of multimodal llms](https://arxiv.org/abs/2407.01509) | [Github](https://github.com/apple/ml-mia-bench) |
-| MM-IFEval   | [Mm-ifengine: Towards multimodal instruction following](https://arxiv.org/abs/2401.01314) | -                                              |
-| MMDU        | [arXiv](https://arxiv.org/)               | -                                              |
+| MM-IFEval   | [MM-IFEngine: Towards Multimodal Instruction Following](https://arxiv.org/abs/2504.07957) | [Github]([https://github.com/apple/ml-mia-bench](https://github.com/SYuan03/MM-IFEngine))  |
+
 
 #### Basic Ability
 
 | Benchmark              | Paper                       | Project Page                                            |
 | ---------------------- | --------------------------- | ------------------------------------------------- |
-| OCRBench / OCRBench v2 | [arXiv](https://arxiv.org/) | [GitHub](https://github.com/BAAI-Agents/OCRBench) |
-| ChartQA / ChartQAPro   | [arXiv](https://arxiv.org/) | -                                                 |
-| MM-DocBench            | [arXiv](https://arxiv.org/) | -                                                 |
+
 
 #### Comprehensive Perception
 
 | Benchmark         | Paper                       | Project Page                                            |
 | ----------------- | --------------------------- | ------------------------------------------------- |
-| LVLM-eHub         | [arXiv](https://arxiv.org/) | [GitHub](https://github.com/OpenGVLab/LVLM-eHub)  |
-| MMBench           | [arXiv](https://arxiv.org/) | [GitHub](https://github.com/open-compass/MMBench) |
-| SEED-Bench Series | [arXiv](https://arxiv.org/) | -                                                 |
+
 
 #### General Knowledge
 
 | Benchmark | Paper                       | Project Page |
 | --------- | --------------------------- | ------ |
-| ScienceQA | [arXiv](https://arxiv.org/) | -      |
-| EESE      | [arXiv](https://arxiv.org/) | -      |
+
+
 
 #### Safety
 
 | Benchmark      | Paper                       | Project Page |
 | -------------- | --------------------------- | ------ |
-| JailbreakV-28K | [arXiv](https://arxiv.org/) | -      |
-| UnsafeBench    | [arXiv](https://arxiv.org/) | -      |
-| SafeBench      | [arXiv](https://arxiv.org/) | -      |
+
+
 
 ### Specialized
 
@@ -91,59 +86,56 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 
 | Benchmark      | Paper                       | Project Page |
 | -------------- | --------------------------- | ------ |
-| MathVista      | [arXiv](https://arxiv.org/) | -      |
-| PolyMATH       | [arXiv](https://arxiv.org/) | -      |
-| Olympiad-Bench | [arXiv](https://arxiv.org/) | -      |
+
 
 #### Physics
 
 | Benchmark    | Paper                       | Project Page |
 | ------------ | --------------------------- | ------ |
-| MM-PhyQA     | [arXiv](https://arxiv.org/) | -      |
-| PhysUniBench | [arXiv](https://arxiv.org/) | -      |
-| PhysicsArena | [arXiv](https://arxiv.org/) | -      |
+
+
 
 #### Chemistry
 
 | Benchmark | Paper                       | Project Page |
 | --------- | --------------------------- | ------ |
-| ChemBench | [arXiv](https://arxiv.org/) | -      |
-| ChemOCR   | [arXiv](https://arxiv.org/) | -      |
+
 
 #### Finance
 
 | Benchmark    | Paper                       | Project Page |
 | ------------ | --------------------------- | ------ |
-| FinMME       | [arXiv](https://arxiv.org/) | -      |
-| Open-FinLLMs | [arXiv](https://arxiv.org/) | -      |
+
+
 
 #### Healthcare & Medical Science
 
 | Benchmark      | Paper                       | Project Page |
 | -------------- | --------------------------- | ------ |
-| HealthBench    | [arXiv](https://arxiv.org/) | -      |
-| OpenMM-Medical | [arXiv](https://arxiv.org/) | -      |
+
+
 
 #### Code
 
 | Benchmark   | Paper                       | Project Page |
 | ----------- | --------------------------- | ------ |
-| Design2Code | [arXiv](https://arxiv.org/) | -      |
-| HumanEval-V | [arXiv](https://arxiv.org/) | -      |
+
+
 
 #### Earth Science / Remote Sensing
 
 | Benchmark  | Paper                       | Project Page |
 | ---------- | --------------------------- | ------ |
-| GeoBench   | [arXiv](https://arxiv.org/) | -      |
-| XLRS-Bench | [arXiv](https://arxiv.org/) | -      |
+
+
+
 
 #### Embodied Tasks
 
 | Benchmark     | Paper                       | Project Page |
 | ------------- | --------------------------- | ------ |
-| Ego4D         | [arXiv](https://arxiv.org/) | -      |
-| EPIC-KITCHENS | [arXiv](https://arxiv.org/) | -      |
+
+
 
 ---
 
@@ -153,30 +145,28 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 
 | Benchmark   | Paper                       | Project Page |
 | ----------- | --------------------------- | ------ |
-| Pick-a-Pic  | [arXiv](https://arxiv.org/) | -      |
-| HPD v2      | [arXiv](https://arxiv.org/) | -      |
-| ImageReward | [arXiv](https://arxiv.org/) | -      |
+
+
 
 ### Video
 
 | Benchmark | Paper                       | Project Page |
 | --------- | --------------------------- | ------ |
-| Video-MME | [arXiv](https://arxiv.org/) | -      |
-| MVBench   | [arXiv](https://arxiv.org/) | -      |
+
+
 
 ### Audio
 
 | Benchmark  | Paper                       | Project Page |
 | ---------- | --------------------------- | ------ |
-| AudioBench | [arXiv](https://arxiv.org/) | -      |
-| AIR-Bench  | [arXiv](https://arxiv.org/) | -      |
+
+
 
 ### 3D
 
 | Benchmark     | Paper                       | Project Page |
 | ------------- | --------------------------- | ------ |
-| M3DBench      | [arXiv](https://arxiv.org/) | -      |
-| Space3D-Bench | [arXiv](https://arxiv.org/) | -      |
+
 
 ---
 
