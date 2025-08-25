@@ -51,7 +51,7 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | ----------- | ----------------------------------------- | ---------------------------------------------- |
 | LLaVA-Bench | [Visual instruction tuning](https://arxiv.org/abs/2304.08485) | [GitHub](https://github.com/haotian-liu/LLaVA) |
 | MIA-Bench   | [Mia-bench: Towards better instruction following evaluation of multimodal llms](https://arxiv.org/abs/2407.01509) | [Github](https://github.com/apple/ml-mia-bench) |
-| MM-IFEval   | [MM-IFEngine: Towards Multimodal Instruction Following](https://arxiv.org/abs/2504.07957) | [Github]([https://github.com/apple/ml-mia-bench](https://github.com/SYuan03/MM-IFEngine))  |
+| MM-IFEval   | [MM-IFEngine: Towards Multimodal Instruction Following](https://arxiv.org/abs/2504.07957) | [Github](https://github.com/SYuan03/MM-IFEngine)  |
 
 
 #### Basic Ability
