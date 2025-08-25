@@ -1,10 +1,12 @@
 # Large Multimodal Models Evaluation: A Survey
 
-This repository complements the paper *Large Multimodal Models Evaluation: A Survey* and organizes benchmarks and resources across understanding, generation, specialized domains, and community platforms. It serves as a hub for researchers to find key datasets, papers, and code.
+This repository complements the paper *Large Multimodal Models Evaluation: A Survey* and organizes benchmarks and resources across understanding (general and specialized), generation, and community platforms. It serves as a hub for researchers to find key datasets, papers, and code.
 
 ![Overview](overview.png)
 
+
 **Paper:** [arXiv Preprint](https://arxiv.org/)
+**Project Page:** [AIBench / LMM Evaluation Survey](https://github.com/aiben-ch/LMM-Evaluation-Survey)
 
 ---
 
@@ -12,34 +14,38 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 
 1. [Understanding Evaluation](#understanding-evaluation)
 
-   * [Adaptability](#adaptability)
-   * [Basic Ability](#basic-ability)
-   * [Comprehensive Perception](#comprehensive-perception)
-   * [General Knowledge](#general-knowledge)
-   * [Safety](#safety)
-2. [Specialized Evaluation](#specialized-evaluation)
+   * [General](#general)
 
-   * [Math](#math)
-   * [Physics](#physics)
-   * [Chemistry](#chemistry)
-   * [Finance](#finance)
-   * [Healthcare & Medical Science](#healthcare--medical-science)
-   * [Code](#code)
-   * [Earth Science / Remote Sensing](#earth-science--remote-sensing)
-   * [Embodied Tasks](#embodied-tasks)
-3. [Generation Evaluation](#generation-evaluation)
+     * [Adaptability](#adaptability)
+     * [Basic Ability](#basic-ability)
+     * [Comprehensive Perception](#comprehensive-perception)
+     * [General Knowledge](#general-knowledge)
+     * [Safety](#safety)
+   * [Specialized](#specialized)
+
+     * [Math](#math)
+     * [Physics](#physics)
+     * [Chemistry](#chemistry)
+     * [Finance](#finance)
+     * [Healthcare & Medical Science](#healthcare--medical-science)
+     * [Code](#code)
+     * [Earth Science / Remote Sensing](#earth-science--remote-sensing)
+     * [Embodied Tasks](#embodied-tasks)
+2. [Generation Evaluation](#generation-evaluation)
 
    * [Image](#image)
    * [Video](#video)
    * [Audio](#audio)
    * [3D](#3d)
-4. [Leaderboards and Tools](#leaderboards-and-tools)
+3. [Leaderboards and Tools](#leaderboards-and-tools)
 
 ---
 
 ## Understanding Evaluation
 
-### Adaptability
+### General
+
+#### Adaptability
 
 | Benchmark   | Paper                                     | GitHub                                         |
 | ----------- | ----------------------------------------- | ---------------------------------------------- |
@@ -47,7 +53,7 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | MM-IFEval   | [arXiv](https://arxiv.org/abs/2401.01314) | -                                              |
 | MMDU        | [arXiv](https://arxiv.org/)               | -                                              |
 
-### Basic Ability
+#### Basic Ability
 
 | Benchmark              | Paper                       | GitHub                                            |
 | ---------------------- | --------------------------- | ------------------------------------------------- |
@@ -55,7 +61,7 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | ChartQA / ChartQAPro   | [arXiv](https://arxiv.org/) | -                                                 |
 | MM-DocBench            | [arXiv](https://arxiv.org/) | -                                                 |
 
-### Comprehensive Perception
+#### Comprehensive Perception
 
 | Benchmark         | Paper                       | GitHub                                            |
 | ----------------- | --------------------------- | ------------------------------------------------- |
@@ -63,14 +69,14 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | MMBench           | [arXiv](https://arxiv.org/) | [GitHub](https://github.com/open-compass/MMBench) |
 | SEED-Bench Series | [arXiv](https://arxiv.org/) | -                                                 |
 
-### General Knowledge
+#### General Knowledge
 
 | Benchmark | Paper                       | GitHub |
 | --------- | --------------------------- | ------ |
 | ScienceQA | [arXiv](https://arxiv.org/) | -      |
 | EESE      | [arXiv](https://arxiv.org/) | -      |
 
-### Safety
+#### Safety
 
 | Benchmark      | Paper                       | GitHub |
 | -------------- | --------------------------- | ------ |
@@ -78,11 +84,9 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | UnsafeBench    | [arXiv](https://arxiv.org/) | -      |
 | SafeBench      | [arXiv](https://arxiv.org/) | -      |
 
----
+### Specialized
 
-## Specialized Evaluation
-
-### Math
+#### Math
 
 | Benchmark      | Paper                       | GitHub |
 | -------------- | --------------------------- | ------ |
@@ -90,7 +94,7 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | PolyMATH       | [arXiv](https://arxiv.org/) | -      |
 | Olympiad-Bench | [arXiv](https://arxiv.org/) | -      |
 
-### Physics
+#### Physics
 
 | Benchmark    | Paper                       | GitHub |
 | ------------ | --------------------------- | ------ |
@@ -98,42 +102,42 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | PhysUniBench | [arXiv](https://arxiv.org/) | -      |
 | PhysicsArena | [arXiv](https://arxiv.org/) | -      |
 
-### Chemistry
+#### Chemistry
 
 | Benchmark | Paper                       | GitHub |
 | --------- | --------------------------- | ------ |
 | ChemBench | [arXiv](https://arxiv.org/) | -      |
 | ChemOCR   | [arXiv](https://arxiv.org/) | -      |
 
-### Finance
+#### Finance
 
 | Benchmark    | Paper                       | GitHub |
 | ------------ | --------------------------- | ------ |
 | FinMME       | [arXiv](https://arxiv.org/) | -      |
 | Open-FinLLMs | [arXiv](https://arxiv.org/) | -      |
 
-### Healthcare & Medical Science
+#### Healthcare & Medical Science
 
 | Benchmark      | Paper                       | GitHub |
 | -------------- | --------------------------- | ------ |
 | HealthBench    | [arXiv](https://arxiv.org/) | -      |
 | OpenMM-Medical | [arXiv](https://arxiv.org/) | -      |
 
-### Code
+#### Code
 
 | Benchmark   | Paper                       | GitHub |
 | ----------- | --------------------------- | ------ |
 | Design2Code | [arXiv](https://arxiv.org/) | -      |
 | HumanEval-V | [arXiv](https://arxiv.org/) | -      |
 
-### Earth Science / Remote Sensing
+#### Earth Science / Remote Sensing
 
 | Benchmark  | Paper                       | GitHub |
 | ---------- | --------------------------- | ------ |
 | GeoBench   | [arXiv](https://arxiv.org/) | -      |
 | XLRS-Bench | [arXiv](https://arxiv.org/) | -      |
 
-### Embodied Tasks
+#### Embodied Tasks
 
 | Benchmark     | Paper                       | GitHub |
 | ------------- | --------------------------- | ------ |
@@ -183,6 +187,5 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 | Chatbot Arena | [Website](https://lmsys.org/arena/)                     |
 | OpenCompass   | [GitHub](https://github.com/open-compass/opencompass)   |
 
----
 
-> **Note:** This README consolidates benchmarks cited in the survey. Please refer to the paper for full details, citations, and extended descriptions.
+We welcome pull requests (PRs)! If you contribute five or more valid benchmarks with relevant details, your contribution will be acknowledged in the next update of the paper's Acknowledgment section.
