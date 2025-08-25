@@ -2,8 +2,9 @@
 
 This repository complements the paper *Large Multimodal Models Evaluation: A Survey* and organizes benchmarks and resources across understanding, generation, specialized domains, and community platforms. It serves as a hub for researchers to find key datasets, papers, and code.
 
+![Overview](overview.png)
+
 **Paper:** [arXiv Preprint](https://arxiv.org/)
-**Project Page:** [AIBench / LMM Evaluation Survey](https://github.com/aiben-ch/LMM-Evaluation-Survey)
 
 ---
 
