@@ -9,6 +9,13 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 **Project Page:** [AIBench / LMM Evaluation Survey](https://github.com/aiben-ch/LMM-Evaluation-Survey)
 
 ---
+## Contributions
+
+We welcome pull requests (PRs)! If you contribute five or more valid benchmarks with relevant details, your contribution will be acknowledged in the next update of the paper's Acknowledgment section.
+
+Come on and join us !!
+
+---
 
 ## Table of Contents
 
@@ -577,6 +584,4 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 |            SuperCLUE            | [SuperCLUE: A Comprehensive Chinese Large Language Model Benchmark](https://arxiv.org/pdf/2307.15020) |          [Website](https://www.cluebenchmarks.com/)          |
 |             AIBench             | [AIbench: Towards Trustworthy Evaluation Under the 45 Law](https://www.researchgate.net/profile/Zicheng-Zhang-9/publication/393362210_AIBENCH_TOWARDS_TRUSTWORTHY_EVALUA-_TION_UNDER_THE_45LAW/links/6867747be4632b045dc9b47c/AIBENCH-TOWARDS-TRUSTWORTHY-EVALUA-TION-UNDER-THE-45LAW.pdf) |                 [Website](https://aiben.ch)                  |
 
-## Contributions
 
-We welcome pull requests (PRs)! If you contribute five or more valid benchmarks with relevant details, your contribution will be acknowledged in the next update of the paper's Acknowledgment section.
