@@ -15,6 +15,8 @@ We welcome pull requests (PRs)! If you contribute five or more valid benchmarks 
 
 Come on and join us !!
 
+If you find our work useful, please give us a star. Thank you !!
+
 ---
 
 ## Table of Contents
