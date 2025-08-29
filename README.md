@@ -2,6 +2,8 @@
 
 This repository complements the paper *Large Multimodal Models Evaluation: A Survey* and organizes benchmarks and resources across understanding (general and specialized), generation, and community platforms. It serves as a hub for researchers to find key datasets, papers, and code.
 
+**We will continuously maintain and update this repo to ensure long-term value for the community.**
+
 ![Overview](overview.png)
 
 
