@@ -587,7 +587,7 @@ If you find our work useful, please give us a star. Thank you !!
 |            LiveBench            | [LiveBench: A Challenging, Contamination-Limited LLM Benchmark](https://arxiv.org/pdf/2406.19314) |           [Project Page](https://livebench.ai/#/)            |
 |            SuperCLUE            | [SuperCLUE: A Comprehensive Chinese Large Language Model Benchmark](https://arxiv.org/pdf/2307.15020) |          [Website](https://www.cluebenchmarks.com/)          |
 |             AIBench             | [AIbench: Towards Trustworthy Evaluation Under the 45 Law](https://www.researchgate.net/profile/Zicheng-Zhang-9/publication/393362210_AIBENCH_TOWARDS_TRUSTWORTHY_EVALUA-_TION_UNDER_THE_45LAW/links/6867747be4632b045dc9b47c/AIBENCH-TOWARDS-TRUSTWORTHY-EVALUA-TION-UNDER-THE-45LAW.pdf) |                 [Website](https://aiben.ch)                  |
-
+|            FutureX              | [FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](https://arxiv.org/pdf/2508.11987) | [Github](https://futurex-ai.github.io/) |
 ## 📖 Citation
 
 If you find our work useful, please cite our paper as:
