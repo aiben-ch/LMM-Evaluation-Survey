@@ -21,6 +21,21 @@ If you find our work useful, please give us a star. Thank you !!
 
 ---
 
+## 📖 Citation
+
+If you find our work useful, please cite our paper as:
+
+```bibtex
+@misc{zhang2025lmmsurvey,
+  title        = {Large Multimodal Models Evaluation: A Survey},
+  author       = {Zicheng Zhang and Junying Wang and Farong Wen and Yijin Guo and Xiangyu Zhao and Xinyu Fang and Shengyuan Ding and Ziheng Jia and Jiahao Xiao and Ye Shen and Yushuo Zheng and Xiaorong Zhu and Yalun Wu and Ziheng Jiao and Wei Sun and Zijian Chen and Kaiwei Zhang and Kang Fu and Yuqin Cao and Ming Hu and Yue Zhou and Xuemei Zhou and Juntai Cao and Wei Zhou and Jinyu Cao and Ronghui Li and Donghao Zhou and Yuan Tian and Xiangyang Zhu and Chunyi Li and Haoning Wu and Xiaohong Liu and Junjun He and Yu Zhou and Hui Liu and Lin Zhang and Zesheng Wang and Huiyu Duan and Yingjie Zhou and Xiongkuo Min and Qi Jia and Dongzhan Zhou and Wenlong Zhang and Jiezhang Cao and Xue Yang and Junzhi Yu and Songyang Zhang and Haodong Duan and Guangtao Zhai},
+  year         = {2025},
+  howpublished = {\url{https://github.com/aiben-ch/LMM-Evaluation-Survey}},
+  note         = {Project Page: AIBench, available online}
+}
+```
+
+
 ## Table of Contents
 
 1. [Understanding Evaluation](#understanding-evaluation)
@@ -588,16 +603,4 @@ If you find our work useful, please give us a star. Thank you !!
 |            SuperCLUE            | [SuperCLUE: A Comprehensive Chinese Large Language Model Benchmark](https://arxiv.org/pdf/2307.15020) |          [Website](https://www.cluebenchmarks.com/)          |
 |             AIBench             | [AIbench: Towards Trustworthy Evaluation Under the 45 Law](https://www.researchgate.net/profile/Zicheng-Zhang-9/publication/393362210_AIBENCH_TOWARDS_TRUSTWORTHY_EVALUA-_TION_UNDER_THE_45LAW/links/6867747be4632b045dc9b47c/AIBENCH-TOWARDS-TRUSTWORTHY-EVALUA-TION-UNDER-THE-45LAW.pdf) |                 [Website](https://aiben.ch)                  |
 |            FutureX              | [FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](https://arxiv.org/pdf/2508.11987) | [Github](https://futurex-ai.github.io/) |
-## 📖 Citation
 
-If you find our work useful, please cite our paper as:
-
-```bibtex
-@misc{zhang2025lmmsurvey,
-  title        = {Large Multimodal Models Evaluation: A Survey},
-  author       = {Zicheng Zhang and Junying Wang and Farong Wen and Yijin Guo and Xiangyu Zhao and Xinyu Fang and Shengyuan Ding and Ziheng Jia and Jiahao Xiao and Ye Shen and Yushuo Zheng and Xiaorong Zhu and Yalun Wu and Ziheng Jiao and Wei Sun and Zijian Chen and Kaiwei Zhang and Kang Fu and Yuqin Cao and Ming Hu and Yue Zhou and Xuemei Zhou and Juntai Cao and Wei Zhou and Jinyu Cao and Ronghui Li and Donghao Zhou and Yuan Tian and Xiangyang Zhu and Chunyi Li and Haoning Wu and Xiaohong Liu and Junjun He and Yu Zhou and Hui Liu and Lin Zhang and Zesheng Wang and Huiyu Duan and Yingjie Zhou and Xiongkuo Min and Qi Jia and Dongzhan Zhou and Wenlong Zhang and Jiezhang Cao and Xue Yang and Junzhi Yu and Songyang Zhang and Haodong Duan and Guangtao Zhai},
-  year         = {2025},
-  howpublished = {\url{https://github.com/aiben-ch/LMM-Evaluation-Survey}},
-  note         = {Project Page: AIBench, available online}
-}
-```
