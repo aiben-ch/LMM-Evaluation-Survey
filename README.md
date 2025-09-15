@@ -197,6 +197,7 @@ If you find our work useful, please cite our paper as:
 |    MMKE-Bench     | [MMKE-BENCH: A MULTIMODAL EDITING BENCHMARK FOR DIVERSE VISUAL KNOWLEDGE](https://arxiv.org/pdf/2502.19870) |   [Github](https://github.com/MMKE-Bench-ICLR/MMKE-Bench)    |
 |      MC-MKE       | [MC-MKE: A Fine-Grained Multimodal Knowledge Editing Benchmark Emphasizing Modality Consistency](https://arxiv.org/pdf/2406.13219)[MIKE: A New Benchmark for Fine-grained Multimodal Entity Knowledge Editing](https://arxiv.org/pdf/2402.14835) |                       *Not available*                        |
 |      NegVQA       | [NegVQA: Can Vision Language Models Understand Negation? ](https://arxiv.org/pdf/2505.22946) |        [Github](https://github.com/yuhui-zh15/NegVQA)        |
+|      LongBench    | [LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding](https://arxiv.org/pdf/2308.14508)  |  [Github](https://github.com/THUDM/LongBench)                |    
 
 #### Comprehensive Perception
 
