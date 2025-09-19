@@ -365,6 +365,7 @@ If you find our work useful, please cite our paper as:
 |   OpenMM-Medical    | [OpenMM-Medical: Open Medical Multimodal Model](https://arxiv.org/abs/2501.15368) | [Github](https://github.com/baichuan-inc/Baichuan-Omni-1.5)  |
 | Genomics-Long-Range | [Genomics-Long-Range: Long-Range Genomic Benchmark](https://openreview.net/forum?id=8O9HLDrmtq) | [Hugging Face](https://huggingface.co/datasets/InstaDeepAI/genomics-long-range-benchmark) |
 |    Genome-Bench     | [Genome-Bench: Comprehensive Genomics Benchmark](https://arxiv.org/abs/2505.19501v1) | [Hugging Face](https://huggingface.co/datasets/Mingyin0312/Genome-Bench) |
+| medagents-benchmark | [MedAgentsBench: Benchmarking Thinking Models and Agent Frameworks for Complex Medical Reasoning](https://arxiv.org/pdf/2503.07459) | [Github](https://github.com/gersteinlab/medagents-benchmark) |
 
 #### Code
 
