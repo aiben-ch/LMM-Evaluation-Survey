@@ -366,6 +366,7 @@ If you find our work useful, please cite our paper as:
 | Genomics-Long-Range | [Genomics-Long-Range: Long-Range Genomic Benchmark](https://openreview.net/forum?id=8O9HLDrmtq) | [Hugging Face](https://huggingface.co/datasets/InstaDeepAI/genomics-long-range-benchmark) |
 |    Genome-Bench     | [Genome-Bench: Comprehensive Genomics Benchmark](https://arxiv.org/abs/2505.19501v1) | [Hugging Face](https://huggingface.co/datasets/Mingyin0312/Genome-Bench) |
 |    MedAgentsBench   | [MedAgentsBench: Benchmarking Thinking Models and Agent Frameworks for Complex Medical Reasoning](https://arxiv.org/pdf/2503.07459) | [Github](https://github.com/gersteinlab/medagents-benchmark) |
+|      MedQ-Bench     | [MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs](https://arxiv.org/abs/2510.01691)   | [Github](https://github.com/liujiyaoFDU/MedQ-Bench) |
 
 #### Code
 
