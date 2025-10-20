@@ -244,6 +244,7 @@ If you find our work useful, please cite our paper as:
 |    MMIE     | [Mmie: Massive multimodal interleaved comprehension benchmark for large vision-language models.](https://arxiv.org/abs/2410.10139) |        [GitHub](https://github.com/Lillianwei-h/MMIE)        |
 | MDK12-Bench | [Mdk12-bench: A multi-discipline benchmark for evaluating reasoning in multimodal large language models.](https://arxiv.org/abs/2504.05782) |         [GitHub](https://github.com/LanceZPF/MDK12)          |
 |    EESE     | [The ever-evolving science exam.](https://arxiv.org/abs/2507.16514) |       [Project Page](https://github.com/aiben-ch/EESE)       |
+|   Q-Mirror  | [Q-Mirror: Unlocking the Multi-Modal Potential of Scientific Text-Only QA Pairs](https://arxiv.org/abs/2509.24297)  | [GitHub](https://github.com/aiben-ch/Q-Mirror)  |
 
 #### Safety
 
