@@ -26,12 +26,15 @@ If you find our work useful, please give us a star. Thank you !!
 If you find our work useful, please cite our paper as:
 
 ```bibtex
-@misc{zhang2025lmmsurvey,
-  title        = {Large Multimodal Models Evaluation: A Survey},
-  author       = {Zicheng Zhang and Junying Wang and Farong Wen and Yijin Guo and Xiangyu Zhao and Xinyu Fang and Shengyuan Ding and Ziheng Jia and Jiahao Xiao and Ye Shen and Yushuo Zheng and Xiaorong Zhu and Yalun Wu and Ziheng Jiao and Wei Sun and Zijian Chen and Kaiwei Zhang and Kang Fu and Yuqin Cao and Ming Hu and Yue Zhou and Xuemei Zhou and Juntai Cao and Wei Zhou and Jinyu Cao and Ronghui Li and Donghao Zhou and Yuan Tian and Xiangyang Zhu and Chunyi Li and Haoning Wu and Xiaohong Liu and Junjun He and Yu Zhou and Hui Liu and Lin Zhang and Zesheng Wang and Huiyu Duan and Yingjie Zhou and Xiongkuo Min and Qi Jia and Dongzhan Zhou and Wenlong Zhang and Jiezhang Cao and Xue Yang and Junzhi Yu and Songyang Zhang and Haodong Duan and Guangtao Zhai},
-  year         = {2025},
-  howpublished = {\url{https://github.com/aiben-ch/LMM-Evaluation-Survey}},
-  note         = {Project Page: AIBench, available online}
+@article{zhang2025large,
+  author    = {Zhang, Zicheng and Wang, Junying and Wen, Farong and Guo, Yijin and Zhao, Xiangyu and Fang, Xinyu and Ding, Shengyuan and Jia, Ziheng and Xiao, Jiahao and Shen, Ye and Zheng, Yushuo and Zhu, Xiaorong and Wu, Yalun and Jiao, Ziheng and Sun, Wei and Chen, Zijian and Zhang, Kaiwei and Fu, Kang and Cao, Yuqin and Hu, Ming and Zhou, Yue and Zhou, Xuemei and Cao, Juntai and Zhou, Wei and Cao, Jinyu and Li, Ronghui and Zhou, Donghao and Tian, Yuan and Zhu, Xiangyang and Li, Chunyi and Wu, Haoning and Liu, Xiaohong and He, Junjun and Zhou, Yu and Liu, Hui and Zhang, Lin and Wang, Zesheng and Duan, Huiyu and Zhou, Yingjie and Min, Xiongkuo and Jia, Qi and Zhou, Dongzhan and Zhang, Wenlong and Cao, Jiezhang and Yang, Xue and Yu, Junzhi and Zhang, Songyang and Duan, Haodong and Zhai, Guangtao},
+  title     = {Large Multimodal Models Evaluation: A Survey},
+  journal   = {SCIENCE CHINA Information Sciences},
+  year      = {2025},
+  volume    = {},
+  pages     = {},
+  url       = {https://www.sciengine.com/SCIS/doi/10.1007/s11432-025-4676-4},
+  doi       = {https://doi.org/10.1007/s11432-025-4676-4}
 }
 ```
 
