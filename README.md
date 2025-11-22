@@ -7,7 +7,7 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 ![Overview](overview.png)
 
 
-**Paper:** [Preprint](https://github.com/aiben-ch/LMM-Evaluation-Survey/blob/main/Large_Multimodal_Models_Evaluation__A_Survey_Preprint.pdf)
+**Paper:** [SCIS](https://www.sciengine.com/SCIS/doi/10.1007/s11432-025-4676-4)
 **Project Page:** [AIBench / LMM Evaluation Survey](https://github.com/aiben-ch/LMM-Evaluation-Survey)
 
 ---
