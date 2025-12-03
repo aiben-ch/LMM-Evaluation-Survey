@@ -304,21 +304,22 @@ If you find our work useful, please cite our paper as:
 #### Physics
 
 | **Benchmark** |                          **Paper**                           |                       **Project Page**                       |
-| :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|   ScienceQA   | [Learn to explain: Multimodal reasoning via thought chains for science question answering.](https://arxiv.org/abs/2209.09513) |       [GitHub](https://github.com/lupantech/ScienceQA)       |
-|      TQA      | [Are you smarter than a sixth grader? textbook question answering for multimodal machine comprehension.](https://openaccess.thecvf.com/content_cvpr_2017/papers/Kembhavi_Are_You_Smarter_CVPR_2017_paper.pdf) |                       *Not available*                        |
-|     AI2D      | [A diagram is worth a dozen images.](https://arxiv.org/abs/1603.07396) |             [Project Page](https://allenai.org/)             |
-|   MM-PhyQA    | [Mm-phyqa: Multimodal physics question answering with multi-image cot prompting.](https://arxiv.org/abs/2404.08704) |                       *Not available*                        |
-| PhysUniBench  | [Physunibench: An undergraduate-level physics reasoning benchmark for multimodal models.](https://arxiv.org/abs/2506.17667) | [Project Page](https://prismax-team.github.io/PhysUniBenchmark/) |
-| PhysicsArena  | [Physicsarena: The first multimodal physics reasoning benchmark exploring variable, process, and solution dimensions.](https://arxiv.org/abs/2505.15472) |   [Hugging Face](https://huggingface.co/papers/2505.15472)   |
-|    SeePhys    | [Seephys: Does seeing help thinking? benchmarking vision-based physics reasoning.](https://arxiv.org/pdf/2505.19099) |         [GitHub](https://github.com/AI4Phys/SeePhys)         |
-|  PhysReason   | [Physreason: A comprehensive benchmark towards physics-based reasoning.](https://arxiv.org/abs/2502.12054) | [Hugging Face](https://huggingface.co/datasets/zhibei1204/PhysReason) |
-| OlympiadBench | [Olympiadbench: A challenging benchmark for promoting agi with olympiad-level bilingual multimodal scientific problems.](https://arxiv.org/abs/2402.14008) |      [GitHub](https://github.com/OpenBMB/OlympiadBench)      |
-|    SceMQA     | [Scemqa: A scientific college entrance level multimodal question answering benchmark.](https://arxiv.org/abs/2402.05138) |          [GitHub](https://github.com/SceMQA/SceMQA)          |
-|     PACS      | [Pacs: A dataset for physical audiovisual commonsense reasoning.](https://arxiv.org/abs/2203.11130) |        [GitHub](https://github.com/samuelyu2002/PACS)        |
-|     GRASP     | [GRASP: A novel benchmark for evaluating language grounding and situated physics understanding in multimodal language models.](https://arxiv.org/abs/2311.09048) |      [GitHub](https://github.com/i-machine-think/grasp)      |
-|   CausalVQA   | [Causalvqa: A physically grounded causal reasoning benchmark for video models.](https://arxiv.org/abs/2506.09943) |   [GitHub](https://github.com/facebookresearch/CausalVQA)    |
-|    LiveXiv    | [Livexiv a multi-modal live benchmark based on arxiv papers content.](https://arxiv.org/abs/2410.10783) |      [GitHub](https://github.com/NimrodShabtay/LiveXiv)      |
+| :---------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|     ScienceQA     | [Learn to explain: Multimodal reasoning via thought chains for science question answering.](https://arxiv.org/abs/2209.09513) |       [GitHub](https://github.com/lupantech/ScienceQA)       |
+|        TQA        | [Are you smarter than a sixth grader? textbook question answering for multimodal machine comprehension.](https://openaccess.thecvf.com/content_cvpr_2017/papers/Kembhavi_Are_You_Smarter_CVPR_2017_paper.pdf) |                       *Not available*                        |
+|       AI2D        | [A diagram is worth a dozen images.](https://arxiv.org/abs/1603.07396) |             [Project Page](https://allenai.org/)             |
+|     MM-PhyQA      | [Mm-phyqa: Multimodal physics question answering with multi-image cot prompting.](https://arxiv.org/abs/2404.08704) |                       *Not available*                        |
+|   PhysUniBench    | [Physunibench: An undergraduate-level physics reasoning benchmark for multimodal models.](https://arxiv.org/abs/2506.17667) | [Project Page](https://prismax-team.github.io/PhysUniBenchmark/) |
+|   PhysicsArena    | [Physicsarena: The first multimodal physics reasoning benchmark exploring variable, process, and solution dimensions.](https://arxiv.org/abs/2505.15472) |   [Hugging Face](https://huggingface.co/papers/2505.15472)   |
+|      SeePhys      | [Seephys: Does seeing help thinking? benchmarking vision-based physics reasoning.](https://arxiv.org/pdf/2505.19099) |         [GitHub](https://github.com/AI4Phys/SeePhys)         |
+|    PhysReason     | [Physreason: A comprehensive benchmark towards physics-based reasoning.](https://arxiv.org/abs/2502.12054) | [Hugging Face](https://huggingface.co/datasets/zhibei1204/PhysReason) |
+|   OlympiadBench   | [Olympiadbench: A challenging benchmark for promoting agi with olympiad-level bilingual multimodal scientific problems.](https://arxiv.org/abs/2402.14008) |      [GitHub](https://github.com/OpenBMB/OlympiadBench)      |
+|      SceMQA       | [Scemqa: A scientific college entrance level multimodal question answering benchmark.](https://arxiv.org/abs/2402.05138) |          [GitHub](https://github.com/SceMQA/SceMQA)          |
+|       PACS        | [Pacs: A dataset for physical audiovisual commonsense reasoning.](https://arxiv.org/abs/2203.11130) |        [GitHub](https://github.com/samuelyu2002/PACS)        |
+|       GRASP       | [GRASP: A novel benchmark for evaluating language grounding and situated physics understanding in multimodal language models.](https://arxiv.org/abs/2311.09048) |      [GitHub](https://github.com/i-machine-think/grasp)      |
+|     CausalVQA     | [Causalvqa: A physically grounded causal reasoning benchmark for video models.](https://arxiv.org/abs/2506.09943) |   [GitHub](https://github.com/facebookresearch/CausalVQA)    |
+|      LiveXiv      | [Livexiv a multi-modal live benchmark based on arxiv papers content.](https://arxiv.org/abs/2410.10783) |      [GitHub](https://github.com/NimrodShabtay/LiveXiv)      |
+| VideoScience-Bench| [Livexiv a multi-modal live benchmark based on arxiv papers content.](https://arxiv.org/abs/2410.10783) |      [GitHub](https://github.com/NimrodShabtay/LiveXiv)      |
 
 #### Chemistry
 
