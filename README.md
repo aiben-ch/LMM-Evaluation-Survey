@@ -201,6 +201,7 @@ If you find our work useful, please cite our paper as:
 |      MC-MKE       | [MC-MKE: A Fine-Grained Multimodal Knowledge Editing Benchmark Emphasizing Modality Consistency](https://arxiv.org/pdf/2406.13219)[MIKE: A New Benchmark for Fine-grained Multimodal Entity Knowledge Editing](https://arxiv.org/pdf/2402.14835) |                       *Not available*                        |
 |      NegVQA       | [NegVQA: Can Vision Language Models Understand Negation? ](https://arxiv.org/pdf/2505.22946) |        [Github](https://github.com/yuhui-zh15/NegVQA)        |
 |      LongBench    | [LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding](https://arxiv.org/pdf/2308.14508)  |  [Github](https://github.com/THUDM/LongBench)                |    
+|      OPOR-BENCH    | [OPOR-Bench: Evaluating Large Language Models on Online Public Opinion Report Generation](https://arxiv.org/abs/2512.01896)  |  *Not available*               |   
 
 #### Comprehensive Perception
 
@@ -304,21 +305,22 @@ If you find our work useful, please cite our paper as:
 #### Physics
 
 | **Benchmark** |                          **Paper**                           |                       **Project Page**                       |
-| :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|   ScienceQA   | [Learn to explain: Multimodal reasoning via thought chains for science question answering.](https://arxiv.org/abs/2209.09513) |       [GitHub](https://github.com/lupantech/ScienceQA)       |
-|      TQA      | [Are you smarter than a sixth grader? textbook question answering for multimodal machine comprehension.](https://openaccess.thecvf.com/content_cvpr_2017/papers/Kembhavi_Are_You_Smarter_CVPR_2017_paper.pdf) |                       *Not available*                        |
-|     AI2D      | [A diagram is worth a dozen images.](https://arxiv.org/abs/1603.07396) |             [Project Page](https://allenai.org/)             |
-|   MM-PhyQA    | [Mm-phyqa: Multimodal physics question answering with multi-image cot prompting.](https://arxiv.org/abs/2404.08704) |                       *Not available*                        |
-| PhysUniBench  | [Physunibench: An undergraduate-level physics reasoning benchmark for multimodal models.](https://arxiv.org/abs/2506.17667) | [Project Page](https://prismax-team.github.io/PhysUniBenchmark/) |
-| PhysicsArena  | [Physicsarena: The first multimodal physics reasoning benchmark exploring variable, process, and solution dimensions.](https://arxiv.org/abs/2505.15472) |   [Hugging Face](https://huggingface.co/papers/2505.15472)   |
-|    SeePhys    | [Seephys: Does seeing help thinking? benchmarking vision-based physics reasoning.](https://arxiv.org/pdf/2505.19099) |         [GitHub](https://github.com/AI4Phys/SeePhys)         |
-|  PhysReason   | [Physreason: A comprehensive benchmark towards physics-based reasoning.](https://arxiv.org/abs/2502.12054) | [Hugging Face](https://huggingface.co/datasets/zhibei1204/PhysReason) |
-| OlympiadBench | [Olympiadbench: A challenging benchmark for promoting agi with olympiad-level bilingual multimodal scientific problems.](https://arxiv.org/abs/2402.14008) |      [GitHub](https://github.com/OpenBMB/OlympiadBench)      |
-|    SceMQA     | [Scemqa: A scientific college entrance level multimodal question answering benchmark.](https://arxiv.org/abs/2402.05138) |          [GitHub](https://github.com/SceMQA/SceMQA)          |
-|     PACS      | [Pacs: A dataset for physical audiovisual commonsense reasoning.](https://arxiv.org/abs/2203.11130) |        [GitHub](https://github.com/samuelyu2002/PACS)        |
-|     GRASP     | [GRASP: A novel benchmark for evaluating language grounding and situated physics understanding in multimodal language models.](https://arxiv.org/abs/2311.09048) |      [GitHub](https://github.com/i-machine-think/grasp)      |
-|   CausalVQA   | [Causalvqa: A physically grounded causal reasoning benchmark for video models.](https://arxiv.org/abs/2506.09943) |   [GitHub](https://github.com/facebookresearch/CausalVQA)    |
-|    LiveXiv    | [Livexiv a multi-modal live benchmark based on arxiv papers content.](https://arxiv.org/abs/2410.10783) |      [GitHub](https://github.com/NimrodShabtay/LiveXiv)      |
+| :---------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|     ScienceQA     | [Learn to explain: Multimodal reasoning via thought chains for science question answering.](https://arxiv.org/abs/2209.09513) |       [GitHub](https://github.com/lupantech/ScienceQA)       |
+|        TQA        | [Are you smarter than a sixth grader? textbook question answering for multimodal machine comprehension.](https://openaccess.thecvf.com/content_cvpr_2017/papers/Kembhavi_Are_You_Smarter_CVPR_2017_paper.pdf) |                       *Not available*                        |
+|       AI2D        | [A diagram is worth a dozen images.](https://arxiv.org/abs/1603.07396) |             [Project Page](https://allenai.org/)             |
+|     MM-PhyQA      | [Mm-phyqa: Multimodal physics question answering with multi-image cot prompting.](https://arxiv.org/abs/2404.08704) |                       *Not available*                        |
+|   PhysUniBench    | [Physunibench: An undergraduate-level physics reasoning benchmark for multimodal models.](https://arxiv.org/abs/2506.17667) | [Project Page](https://prismax-team.github.io/PhysUniBenchmark/) |
+|   PhysicsArena    | [Physicsarena: The first multimodal physics reasoning benchmark exploring variable, process, and solution dimensions.](https://arxiv.org/abs/2505.15472) |   [Hugging Face](https://huggingface.co/papers/2505.15472)   |
+|      SeePhys      | [Seephys: Does seeing help thinking? benchmarking vision-based physics reasoning.](https://arxiv.org/pdf/2505.19099) |         [GitHub](https://github.com/AI4Phys/SeePhys)         |
+|    PhysReason     | [Physreason: A comprehensive benchmark towards physics-based reasoning.](https://arxiv.org/abs/2502.12054) | [Hugging Face](https://huggingface.co/datasets/zhibei1204/PhysReason) |
+|   OlympiadBench   | [Olympiadbench: A challenging benchmark for promoting agi with olympiad-level bilingual multimodal scientific problems.](https://arxiv.org/abs/2402.14008) |      [GitHub](https://github.com/OpenBMB/OlympiadBench)      |
+|      SceMQA       | [Scemqa: A scientific college entrance level multimodal question answering benchmark.](https://arxiv.org/abs/2402.05138) |          [GitHub](https://github.com/SceMQA/SceMQA)          |
+|       PACS        | [Pacs: A dataset for physical audiovisual commonsense reasoning.](https://arxiv.org/abs/2203.11130) |        [GitHub](https://github.com/samuelyu2002/PACS)        |
+|       GRASP       | [GRASP: A novel benchmark for evaluating language grounding and situated physics understanding in multimodal language models.](https://arxiv.org/abs/2311.09048) |      [GitHub](https://github.com/i-machine-think/grasp)      |
+|     CausalVQA     | [Causalvqa: A physically grounded causal reasoning benchmark for video models.](https://arxiv.org/abs/2506.09943) |   [GitHub](https://github.com/facebookresearch/CausalVQA)    |
+|      LiveXiv      | [Livexiv a multi-modal live benchmark based on arxiv papers content.](https://arxiv.org/abs/2410.10783) |      [GitHub](https://github.com/NimrodShabtay/LiveXiv)      |
+| VideoScience-Bench| [Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench.](https://arxiv.org/abs/2512.02942) |      [GitHub](https://github.com/hao-ai-lab/VideoScience)      |
 
 #### Chemistry
 
@@ -462,6 +464,9 @@ If you find our work useful, please cite our paper as:
 |                    VLABench                     | [VLABench: Vision-Language-Action Benchmark](https://arxiv.org/abs/2412.18194) |         [Project Page](https://vlabench.github.io/)          |
 |                    EWMBench                     | [EWMBench: Embodied World Model Benchmark](https://arxiv.org/abs/2505.09694) |       [Github](https://github.com/AgibotTech/EWMBench)       |
 | NeurIPS 2025 Embodied Agent Interface Challenge |       NeurIPS 2025 Embodied Agent Interface Challenge        |       [Project Page](https://neurips25-eai.github.io/)       |
+|  SEER-Bench  |       [Vision to Geometry: 3D Spatial Memory for Sequential Embodied MLLM Reasoning and Exploration](https://arxiv.org/abs/2512.02458)        |       *Not available*      |
+|  ReMindView-Bench   |       [Reasoning Path and Latent State Analysis for Multi-view Visual Spatial Reasoning: A Cognitive Science Perspective](https://arxiv.org/abs/2512.02340)        |     [Github](https://github.com/pittisl/ReMindView-Bench)     |
+  
 
 ## Generation Evaluation
 
@@ -548,6 +553,8 @@ If you find our work useful, please cite our paper as:
 |           Who is a Better Imitator            | [Who is a Better Imitator: Subjective and Objective Quality Assessment of Animated Humans](https://jhc.sjtu.edu.cn/~xiaohongliu/papers/2025imitator.pdf) |        [GitHub](https://github.com/zyj-2000/Imitator)        |
 |                     MI3S                      | [MI3S: A multimodal large language model assisted quality assessment framework for AI-generated talking heads](https://pdf.sciencedirectassets.com/271647/1-s2.0-S0306457325X00054/1-s2.0-S0306457325002626/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBcaCXVzLWVhc3QtMSJGMEQCICpU%2B72AWLLqhVTeZBT8KKIM6HqrxaWNhfx1XmMJws%2B5AiBz7ugtVWdvZs%2BTHix%2FkTyitgCHdYQs%2FgWZkhMsnEml%2FCqzBQhvEAUaDDA1OTAwMzU0Njg2NSIMXxdBi9ZA2gW0dKiMKpAF5OoKlRvyeBg%2Fzn2oPBKZoQjz4CSdu3Jy1XEkDSOfGZY3YD2JqyP7DAZMcltmpirR0C1tKf%2FnBi%2BvnHqdFbGm4YLBI9QNVmCRAKmMluCSHcLxBJbjYAazVMyJBPdWoFIQ2GbbQ42iOYdtNW%2FgtiyKU6MWcbb4KF8wKtLp6r4rj%2B38IM2IMlisN0277DwRBkYpjjCJk7G%2F4egUGIVY8Nje%2FGXlk0n1iASjUZKqsW7nQ759wgjmv5qgAm%2BwGqs7sB%2Bslv4GgLrXJzAeSqofQmfID%2BHHf%2Bz0B2aXMM3BUB3pOCW6szSEpHiDyk5izmFCYHxO4H5zYvySdzZvp9MOqnSYnWo2jDHIMHpfByhN7HWaZ223cZpAhQysTajsje1XNJGNatnUY5xFugh7B9zXpg9uuRhnkbUJN9%2BpFdjGoMHNxIFJUk5lZpX9xZ89jpFNzORGRw%2BuTxevGlob4jebb2j%2FMvlqOs7Jgfn5iZIcReWv7slfkHwgdcnnejkbFCPn5XMMgzku2%2FAUJOSmyZ6dV8xLxf%2Bn9a57n6VOhMORtBhMm7dx6I7fMAKSoknbWsnzl2nKql%2BwJp3cQlOsbgNEIVYKOtKft8cMsWDZt9w%2BLg6oLrEiqI3zEfsp4ccLQH0CfA7h9fAKQrZGySo%2FBsc%2FPmbw5A3yMJHHdLzFMBMXcuHqIxBeKPojYSH2ygYfuCwYBYbWe3IgbI21rjTYxTQ%2F1ACzX609a49d7OLKGp1HyDBQ137q2bk9DqFQAf27RDQojF3nid7U1gbOladQp9YR4aAQkNFj6emt4O39wTh2ug1%2F%2FBwURYkuuK7vxBxlumkJbDaNLV07ukn2tteddb51wYG%2F6Zo4czXQgItliQ6xcaQvzzsw9p61xQY6sgEo7PmFzMIHdYAjPhZXODMcw3XdsBC9Tl4%2BhQKHzQN6dIH1z6jx%2BJsEcp%2FTBp4H8Bis%2FuSSdKlnnRo5o7s2mR1q%2F0S5Df47BVAgtslpQIO8wRJ0lL1H5PZ8siXzsqHn%2BLi6xvqMH3q5vkE2NrHMWNTAwcEG7aUZ07cX9hyJUMqRLQSCS%2BPYnDw3NZSKZZFsdQbl7KfGHB%2F%2FBfKR%2FRtxOvBnzMcffup0Oq%2FOMspmpcIGwr%2F8&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250826T070451Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYXD6JI5HF%2F20250826%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=377df3c1bc014b91a05786f7ec5553e07819d6123bb58869433e31e33b0abda7&hash=5d3d2a43208117496897344bb132d068845e4d3a80667eb15d956e3915ac3678&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0306457325002626&tid=spdf-6c54bd1c-a6c5-4c5c-8126-5120be841082&sid=6bff0ae6832fe04476180138b052652ce1b0gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=0e055b53545152065d&rr=97517a361b26e2f0&cc=hk&kca=eyJrZXkiOiJnV2RjazFEZldLb3lOVGUzdzVoSXdiQ2E1K05SNXVFemFqak5qK3lXVXoza0hmTExBTkxVMkp5bEVKcVZidEpEWFdGMUlDOTlQUHpoR095N2FzTnFQU0hOSi9CcndGL2NzVFNRSk5mcThQSG4vcm1YUEVwc1JrTWJlRFFMRmczQmd1Y0FWSGZ6UlRicktzaTZCZGpCcEt5OFQ1a2NHTHNTeG1UY3Y3TUNaWHl3ZkcxL0NRPT0iLCJpdiI6IjBhNmY1Mzc1YmFhZGEyNzA3ZDgwZGJiMGYwMmNmZTI3In0=_1756191904186) |                       *Not available*                        |
 | An Implementation of Multimodal Fusion System | [An Implementation of Multimodal Fusion System for Intelligent Digital Human Generation](https://arxiv.org/pdf/2310.20251) |  [GitHub](https://github.com/zyj-2000/CUMT_2D_PhotoSpeaker)  |
+|                  RULER-Bench                  | [RULER-Bench: Probing Rule-based Reasoning Abilities of Next-level Video Generation Models for Vision Foundation Intelligence](https://arxiv.org/abs/2512.02622) |  [GitHub](https://hexmseeu.github.io/RULER-Bench-proj/)  |
+|    PAI-Bench    |    [PAI-Bench: A Comprehensive Benchmark For Physical AI](https://arxiv.org/abs/2512.01989) | [Github](https://github.com/SHI-Labs/physical-ai-bench)|
 
 ### Audio
 
