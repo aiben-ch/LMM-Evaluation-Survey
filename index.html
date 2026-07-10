@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Capabilities Index</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fafafa;
+      color: #333;
+      padding: 40px;
+    }
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 24px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .main-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+    }
+    .chart-container {
+      flex: 1;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    .settings-panel {
+      width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 20px;
+      height: fit-content;
+    }
+    .settings-panel h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .settings-panel h3::before {
+      content: "\2699";
+      font-size: 18px;
+    }
+    .setting-group {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .setting-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .setting-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #333;
+      cursor: pointer;
+    }
+    .color-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .setting-group select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #333;
+      background: #fafafa;
+      cursor: pointer;
+    }
+    .setting-group input[type="range"] {
+      width: 100%;
+      margin-top: 6px;
+    }
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #555;
+    }
+    .toggle {
+      position: relative;
+      width: 36px;
+      height: 20px;
+    }
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: #ccc;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .toggle-slider::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      bottom: 2px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    .toggle input:checked + .toggle-slider {
+      background: #333;
+    }
+    .toggle input:checked + .toggle-slider::before {
+      transform: translateX(16px);
+    }
+    #chart {
+      width: 100%;
+      height: 520px;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .toolbar-left {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .toolbar-btn {
+      padding: 6px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      font-size: 12px;
+      cursor: pointer;
+      color: #555;
+      transition: all 0.2s;
+    }
+    .toolbar-btn:hover {
+      border-color: #999;
+      color: #333;
+    }
+    .toolbar-btn.active {
+      background: #333;
+      color: #fff;
+      border-color: #333;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #555;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .score-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: #f0f0f0;
+      color: #666;
+    }
+    .explore-by-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip:hover {
+      background: #f5f5f5;
+    }
+    .chip.active {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+    }
+    .org-group {
+      margin-bottom: 8px;
+    }
+    .org-group-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .org-group-header .arrow {
+      font-size: 10px;
+      transition: transform 0.2s;
+      color: #999;
+    }
+    .org-group-header.expanded .arrow {
+      transform: rotate(90deg);
+    }
+    .org-group-children {
+      display: none;
+      padding-left: 24px;
+      margin-top: 4px;
+    }
+    .org-group-children.show {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .org-group-children .checkbox-item {
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>LMM Benchmark Timeline</h1>
+    <p>Tracking AI benchmark papers and their citations over time. Interactive scatter plot with filtering by category, citation range, and time period.</p>
+  </div>
+
+  <div class="main-layout">
+    <div class="chart-container">
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <button class="toolbar-btn active" data-chart="scatter">Scatter</button>
+          <button class="toolbar-btn" data-chart="line">Line</button>
+        </div>
+        <div class="toolbar-left">
+          <button class="toolbar-btn" id="btnShare">Share</button>
+          <button class="toolbar-btn" id="btnDownload">Download</button>
+        </div>
+      </div>
+
+      <div id="chart"></div>
+
+      <div id="paperInfo" style="display:none; margin-top:16px; padding:24px; background:#f9f9f9; border-radius:8px; border:1px solid #eee; text-align:center;">
+        <h4 id="paperTitle" style="font-size:20px; font-weight:700; margin-bottom:16px;"></h4>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <a id="paperLink" href="#" target="_blank" style="font-size:16px; color:#1976d2; text-decoration:none; font-weight:500; display:flex; align-items:center; gap:6px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Paper
+          </a>
+          <a id="githubLink" href="#" target="_blank" style="font-size:16px; color:#333; text-decoration:none; font-weight:500; display:flex; align-items:center; gap:6px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="legend" id="legend"></div>
+    </div>
+
+    <div class="settings-panel">
+      <h3>Settings</h3>
+
+      <div class="setting-group">
+        <label class="explore-by-label">Explore by</label>
+        <div class="chip-group" id="exploreByChips">
+          <button class="chip active" data-explore="Understanding Evaluation">Understanding Evaluation</button>
+          <button class="chip" data-explore="Generation Evaluation">Generation Evaluation</button>
+          <button class="chip" data-explore="Leardboards and Tools">Leardboards and Tools</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label>Organizations</label>
+        <div class="checkbox-group" id="orgCheckboxes">
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label>Time Range</label>
+        <input type="range" id="timeMinSlider" min="0" max="100" value="0">
+        <div class="range-labels">
+          <span>From: <span id="timeMinLabel">2018-01</span></span>
+          <span></span>
+        </div>
+        <input type="range" id="timeSlider" min="0" max="100" value="100" style="margin-top:8px;">
+        <div class="range-labels">
+          <span>To: <span id="timeLabel">2026-07</span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label>Citation Range (max)</label>
+        <input type="range" id="scoreMaxSlider" min="0" max="1200" step="1" value="120">
+        <div class="range-labels">
+          <span>Max: <span id="scoreMaxLabel">12,000</span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label>Display</label>
+        <div class="toggle-row" style="margin-bottom:10px;">
+          <span>Show Labels</span>
+          <label class="toggle">
+            <input type="checkbox" id="toggleLabels">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <span>Connect Points</span>
+          <label class="toggle">
+            <input type="checkbox" id="toggleLines">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label>Point Size</label>
+        <input type="range" id="sizeSlider" min="6" max="24" value="14">
+        <div class="range-labels">
+          <span>Small</span>
+          <span>Large</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Define categories for each Explore mode
+    const exploreCategories = {
+      'Understanding Evaluation': {
+        items: [
+          { name: 'General', children: ['Adaptability', 'Basic Ability', 'Comprehensive Perception', 'General Knowledge', 'Safety'] },
+          { name: 'Specialized', children: ['Math', 'Physics', 'Chemistry', 'Finance', 'Healthcare & Medical Science', 'Code'] },
+          { name: 'Autonomous Driving', children: ['Earth Science / Remote Sensing', 'Embodied Tasks', 'AI Agent'] },
+        ],
+        colors: {
+          'General': '#e91e63', 'Specialized': '#26a69a', 'Autonomous Driving': '#5c6bc0',
+          'Adaptability': '#e91e63',
+          'Basic Ability': '#f44336',
+          'Comprehensive Perception': '#d81b60',
+          'General Knowledge': '#c2185b',
+          'Safety': '#ad1457',
+          'Math': '#26a69a',
+          'Physics': '#00897b',
+          'Chemistry': '#00796b',
+          'Finance': '#43a047',
+          'Healthcare & Medical Science': '#2e7d32',
+          'Code': '#1b5e20',
+          'Earth Science / Remote Sensing': '#5c6bc0',
+          'Embodied Tasks': '#3949ab',
+          'AI Agent': '#283593',
+        }
+      },
+      'Generation Evaluation': {
+        items: [
+          { name: 'Image Video', children: [] },
+          { name: 'Audio', children: [] },
+          { name: '3D', children: [] },
+        ],
+        colors: { 'Image Video': '#f57c00', 'Audio': '#8e24aa', '3D': '#1976d2' }
+      },
+      'Leardboards and Tools': {
+        items: [
+          { name: 'OpenAI', children: [] },
+          { name: 'Google', children: [] },
+          { name: 'Anthropic', children: [] },
+          { name: 'Meta', children: [] },
+          { name: 'Mistral', children: [] },
+          { name: 'DeepSeek', children: [] },
+        ],
+        colors: { 'OpenAI': '#e91e63', 'Google': '#26a69a', 'Anthropic': '#5c6bc0', 'Meta': '#1976d2', 'Mistral': '#f57c00', 'DeepSeek': '#8e24aa' }
+      },
+    };
+
+    let currentExplore = 'Understanding Evaluation';
+
+    function getOrgColors() {
+      return exploreCategories[currentExplore].colors;
+    }
+
+    // Map org names to their color
+    function getColorForOrg(orgName) {
+      const colors = getOrgColors();
+      return colors[orgName] || '#999';
+    }
+
+    const orgColors = getOrgColors();
+
+    const allData = [
+      // Format: {name, date, citations, org (category), paper, github}
+      // Data will be added by user
+      {name: "LLava-Bench", 
+       date: "2023-04-17",
+       citations:  10090,
+       org: "Adaptability",
+       paper:"https://arxiv.org/abs/2304.08485",
+       github:"https://github.com/haotian-liu/LLaVA"
+      },
+      {
+        name: "MIA-Bench",
+        date: "2024-07-01",
+        citations: 57,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2407.01509",
+        github: "https://github.com/apple/ml-mia-bench"
+      },
+      {
+        name: "MM-IFEval",
+        date: "2025-04-10",
+        citations: 38,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2504.07957",
+        github: "https://github.com/SYuan03/MM-IFEngine"
+      },
+      {
+        name: "VisIT-Bench",
+        date: "2023-08-12",
+        citations: 109,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2308.06595",
+        github: "https://github.com/mlfoundations/VisIT-Bench/"
+      },
+      {
+        name: "MMDU",
+        date: "2024-07-17",
+        citations: 84,
+        org:"Adaptability",
+        paper: "https://arxiv.org/abs/2406.11833",
+        github: "https://github.com/Liuziyu77/MMDU"
+      },
+      {
+        name: "ConvBench",
+        date: "2024-03-29",
+        citations: 23,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2403.20194",
+        github: "https://github.com/shirlyliu64/ConvBench"
+      },
+      {
+        name: "SIMMC 2.0",
+        date: "2021-04-18",
+        citations: 105,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2104.08667",
+        github: "https://github.com/facebookresearch/simmc2"
+      },
+      {
+        name: "Mementos",
+        date: "2024-01-19",
+        citations: 112,
+        org: "Adaptability",
+        paper : "https://arxiv.org/abs/2401.10529",
+        github: "https://github.com/umd-huang-lab/Mementos"
+      },
+      {
+        name :"MUIRBENCH",
+        date: "2024-01-13",
+        citations: 165,
+        org: "Adaptability",
+        paper : "https://arxiv.org/abs/2406.09411",
+        github: "https://github.com/muirbench/MuirBench"
+      },
+      {
+        name: "MMIU",
+        date: "2024-08-05",
+        citations: 66,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2408.02718",
+        github: "https://github.com/OpenGVLab/MMIU"
+      },
+      {
+        name: "MIRB",
+        date: "2024-06-18",
+        citations: 49,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2406.12742",
+        github: "https://github.com/ys-zong/MIRB"
+      },
+      {
+        name: "MIBench",
+        date: "2024-07-21",
+        citations: 42,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2407.15272",
+        github: "https://huggingface.co/datasets/StarBottle/MIBench"
+      },
+      {
+        name: "II-Bench",
+        date: "2024-06-09",
+        citations: 21,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2406.05862",
+        github: "https://github.com/II-Bench/II-Bench"
+      },
+      {
+        name: "Mantis",
+        date: "2024-05-02",
+        citations: 232,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2405.01483",
+        github: "https://github.com/TIGER-AI-Lab/Mantis"
+      },
+      {
+        name: "MileBench",
+        date: "2024-04-29",
+        citations: 83,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2404.18532",
+        github: "https://github.com/MileBench/MileBench"
+      },
+      {
+        name: "ReMI",
+        date: "2024-06-13",
+        citations: 31,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2406.09175",
+        github: "https://huggingface.co/datasets/mehrankazemi/ReMI"
+      },
+      {
+        name: "CODIS",
+        date: "2024-02-21",
+        citations: 14,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2402.13607",
+        github: "https://github.com/THUNLP-MT/CODIS"
+      },
+      {
+        name: "SPARKLES",
+        date: "2023-08-31",
+        citations: 32,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2308.16463",
+        github: "https://github.com/HYPJUDY/Sparkles"
+      },
+      {
+        name: "MMIE",
+        date: "2024-10-14",
+        citations: 36, 
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2410.10139",
+        github: "https://github.com/Lillianwei-h/MMIE"
+      },
+      {
+        name: "InterleavedBench",
+        date: "2024-01-20",
+        citations: 29,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2406.14643",
+        github: "https://huggingface.co/mqliu/InterleavedBench"
+      },
+      {
+        name: "OpenING",
+        date: "2024-11-27",
+        citations: 28,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2411.18499",
+        github: "https://github.com/LanceZPF/OpenING"
+      },
+      {
+       name: "HumaniBench",
+       date: "2025-05-16",
+       citations: 17,
+       org: "Adaptability",
+       paper: "https://arxiv.org/abs/2505.11454",
+       github: "https://github.com/VectorInstitute/HumaniBench" 
+      },
+      {
+        name: "Herm-Bench",
+        date: "2024-10-09",
+        citations: 7,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2410.06777",
+        github: "https://github.com/ZJHTerry18/Human-Centric-MLLM"
+      },
+      {
+        name: "UNIAA",
+        date: "2024-04-15",
+        citations: 41,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2404.09619",
+        github: "https://github.com/KlingAIResearch/Uniaa"
+      },
+      {
+        name: "Humanbeauty",
+        date: "2025-03-31",
+        citations: 16,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2503.23907",
+        github: "https://github.com/KlingAIResearch/HumanAesExpert"
+      },
+      {
+        name: "SocialIQA",
+        date: "2019-04-12",
+        citations: 1586,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/1904.09728",
+        github: "https://huggingface.co/datasets/allenai/social_i_qa"
+      },
+      {
+        name: "EmpathicStories",
+        date: "2024-05-24",
+        citations: 17,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2405.15708",
+        github: "https://mitmedialab.github.io/empathic-stories-multimodal/"
+      },
+      {
+        name: "Chatbot Arena",
+        date: "2024-03-07",
+        citations: 1359, 
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2403.04132",
+        github: ""
+      },
+      {
+        name: "OpenAssistant Conversations",
+        date: "2023-04-14",
+        citations: 885,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2304.07327",
+        github: "https://github.com/LAION-AI/Open-Assistant"
+      },
+      {
+        name: "HCE",
+        date: "2025-06-02",
+        citations: 8,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2506.01793",
+        github: "https://github.com/yijinguo/Human-Centric-Evaluation"
+      },
+      {
+        name: "MemGUI-Bench",
+        date: "2026-02-03",
+        citations: 13,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2602.06075",
+        github: "https://lgy0404.github.io/MemGUI-Bench/"
+      },
+      {
+        name: "OP-Bench",
+        date: "2026-01-20",
+        citations: 7,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2601.13722",
+        github: ""
+      },
+      {
+        name: "TEA-Bench",
+        date: "2026-01-26",
+        citations: 3,
+        org: "Adaptability",
+        paper: "https://arxiv.org/abs/2601.18700",
+        github: ""
+      },
+      {
+        name: "NWPU-MOC",
+        date: "2024-01-19",
+        citations: 81,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2401.10530",
+        github: "https://github.com/lyongo/NWPU-MOC"
+      },
+      {
+        name: "T2V-ComBench",
+        date: "2024-07-19",
+        citations: 152,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2407.14505",
+        github: "https://github.com/KaiyueSun98/T2V-CompBench/tree/V2"
+      },
+      {
+        name: "ConceptMix",
+        date: "2024-08-26",
+        citations:64,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2408.14339",
+        github: "https://github.com/princetonvisualai/ConceptMix"
+      },
+      {
+        name: "PICD",
+        date: "2025-10-11",
+        citations: 11,
+        org: "Basic Ability",
+        paper: "https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_Can_Machines_Understand_Composition_Dataset_and_Benchmark_for_Photographic_Image_CVPR_2025_paper.pdf",
+        github: "https://github.com/CV-xueba/PICD_ImageComposition"
+      },
+      {
+        name: "TextVQA",
+        date: "2019-04-18",
+        citations: 2160,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/1904.08920",
+        github: "https://github.com/facebookresearch/mmf"
+      },
+      {
+        name: "OCR-VQA",
+        date: "2019-09-01",
+        citations: 674,
+        org: "Basic Ability",
+        paper: "https://anandmishra22.github.io/files/mishra-OCR-VQA.pdf",
+        github: "https://ocr-vqa.github.io/"
+      },
+      {
+        name: "OCRBench",
+        date: "2023-05-13",
+        citations: 457,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2305.07895",
+        github: "https://github.com/Yuliang-Liu/MultimodalOCR"
+      },
+      {
+        name: "OCRBench v2",
+        date: "2024-12-31",
+        citations: 141,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2501.00321",
+        github: "https://github.com/Yuliang-Liu/MultimodalOCR"
+      },
+      {
+        name: "ASCIIEval",
+        date: "2024-10-02",
+        citations: 4,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2410.01733",
+        github: "https://github.com/JiaQiSJTU/VisionInText"
+      },
+      {
+        name: "OCR-Reasoning",
+        date: "2025-05-22",
+        citatioins: 23,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2505.17163",
+        github: "https://github.com/SCUT-DLVCLab/OCR-Reasoning"
+      },
+      {
+        name: "M4-ViteVQA",
+        date: "2022-11-28",
+        citations: 52,
+        org: "Basic Ability",
+        paper: "https://proceedings.neurips.cc/paper_files/paper/2022/file/e726197ffd401df4013cd9f81007b5cf-Paper-Datasets_and_Benchmarks.pdf",
+        github: "https://github.com/bytedance/VTVQA"
+      },
+      {
+        name: "SEED-Bench-2-Plus",
+        date: "2024-04-25",
+        citations: 142,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2404.16790",
+        github: "https://github.com/AILab-CVC/SEED-Bench"
+      },
+      {
+        name: "MMDocBench",
+        date: "2024-10-25",
+        citations: 19,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2410.21311",
+        github: "https://github.com/fengbinzhu/MMDocBench"
+      },
+      {
+        name: "MMLongBench-Doc",
+        date: "2024-07-01",
+        citations: 155,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2407.01523",
+        github: "https://github.com/mayubo2333/MMLongBench-Doc"
+      },
+      {
+        name: "UDA",
+        date: "2024-06-21",
+        citations: 52,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2406.15187",
+        github: "https://github.com/qinchuanhui/UDA-Benchmark"
+      },
+      {
+        name: "VisualMRC",
+        date: "2021-05-10",
+        citations: 208,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2101.11272",
+        github: "https://github.com/nttmdlab-nlp/VisualMRC"
+      },
+      {
+        name: "DocVQA",
+        date: "2021-01-05",
+        citations: 1493,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2007.00398",
+        github: "https://huggingface.co/datasets/eliolio/docvqa"
+      },
+      {
+        name: "DocGenome",
+        date: "2024-06-17",
+        citations: 34,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2406.11633",
+        github: "https://github.com/Alpha-Innovator/DocGenome"
+      },
+      {
+        name: "GDI-Bench",
+        date: "2025-04-30",
+        citations: 2,
+        org: "Basic Ability",
+        paper: "https://arxiv.org/abs/2505.00063",
+        github: "https://knowledgexlab.github.io/gdibench.github.io/"
+      }
+    ];
+
+    const chart = echarts.init(document.getElementById('chart'));
+
+    // State
+    let selectedOrgs = new Set();
+    let currentMinDate = new Date('2018-01-01');
+    let currentMaxDate = new Date('2026-07-01');
+    let scoreMax = 12000;
+    // Snap positions for the max-citation slider: 50, 100, 200, 300, ..., 12000
+    const citationSnaps = [50, 100];
+    for (let v = 200; v <= 12000; v += 100) citationSnaps.push(v);
+    let showLabels = false;
+    let showLines = false;
+    let pointSize = 14;
+    let chartType = 'scatter';
+    const minDate = new Date('2018-01-01');
+    const maxDate = new Date('2026-07-01');
+
+    // Build org checkboxes
+    const orgCheckboxContainer = document.getElementById('orgCheckboxes');
+
+    function buildOrgCheckboxes() {
+      const colors = getOrgColors();
+      const items = exploreCategories[currentExplore].items;
+      orgCheckboxContainer.innerHTML = '';
+      selectedOrgs = new Set();
+
+      items.forEach(group => {
+        const hasChildren = group.children && group.children.length > 0;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'org-group';
+
+        if (hasChildren) {
+          wrapper.innerHTML = `
+            <div class="org-group-header">
+              <span class="arrow">&#9654;</span>
+              <input type="checkbox" checked data-org="${group.name}">
+              <span class="color-dot" style="background:${colors[group.name]};"></span>
+              ${group.name}
+            </div>
+            <div class="org-group-children">
+              ${group.children.map(child => `
+                <label class="checkbox-item">
+                  <input type="checkbox" checked data-org="${child}" data-parent="${group.name}">
+                  ${child}
+                </label>
+              `).join('')}
+            </div>
+          `;
+          // Toggle expand/collapse
+          const header = wrapper.querySelector('.org-group-header');
+          const childrenDiv = wrapper.querySelector('.org-group-children');
+          header.addEventListener('click', function(e) {
+            if (e.target.type === 'checkbox') return;
+            header.classList.toggle('expanded');
+            childrenDiv.classList.toggle('show');
+          });
+        } else {
+          wrapper.innerHTML = `
+            <label class="checkbox-item">
+              <input type="checkbox" checked data-org="${group.name}">
+              <span class="color-dot" style="background:${colors[group.name]};"></span>
+              ${group.name}
+            </label>
+          `;
+        }
+
+        orgCheckboxContainer.appendChild(wrapper);
+        selectedOrgs.add(group.name);
+        if (hasChildren) {
+          group.children.forEach(c => selectedOrgs.add(c));
+        }
+      });
+    }
+
+    buildOrgCheckboxes();
+
+    // Build legend
+    const legendEl = document.getElementById('legend');
+
+    function buildLegend() {
+      const colors = getOrgColors();
+      const items = exploreCategories[currentExplore].items;
+      legendEl.innerHTML = '';
+      items.forEach(group => {
+        if (group.children && group.children.length > 0) {
+          group.children.forEach(child => {
+            legendEl.innerHTML += `
+              <div class="legend-item">
+                <div class="legend-dot" style="background:${colors[child] || colors[group.name]};"></div>
+                ${child}
+              </div>
+            `;
+          });
+        } else {
+          legendEl.innerHTML += `
+            <div class="legend-item">
+              <div class="legend-dot" style="background:${colors[group.name]};"></div>
+              ${group.name}
+            </div>
+          `;
+        }
+      });
+    }
+
+    buildLegend();
+
+    function render() {
+      let filtered = allData.filter(d =>
+        selectedOrgs.has(d.org) &&
+        new Date(d.date) >= currentMinDate &&
+        new Date(d.date) <= currentMaxDate &&
+        d.citations <= scoreMax
+      );
+
+      const orgs = [...new Set(filtered.map(d => d.org))];
+      const series = orgs.map(org => {
+        const orgData = filtered.filter(d => d.org === org).sort((a, b) => new Date(a.date) - new Date(b.date));
+        return {
+          name: org,
+          type: chartType === 'line' ? 'line' : 'scatter',
+          data: orgData.map(d => ({
+            value: [d.date, d.citations],
+            name: d.name,
+            paper: d.paper,
+            github: d.github,
+          })),
+          symbolSize: pointSize,
+          itemStyle: { color: getColorForOrg(org) },
+          lineStyle: showLines || chartType === 'line' ? { width: 2, opacity: 0.6 } : { width: 0 },
+          showSymbol: true,
+          label: {
+            show: showLabels,
+            formatter: p => p.data.name,
+            fontSize: 10,
+            color: '#555',
+            position: 'top',
+          },
+          emphasis: {
+            itemStyle: { borderColor: '#333', borderWidth: 2 },
+            scale: 1.4,
+          },
+        };
+      });
+
+      const maxCitations = filtered.length > 0 ? Math.max(...filtered.map(d => d.citations), 100) : 100;
+
+      const option = {
+        animation: true,
+        animationDuration: 400,
+        tooltip: {
+          trigger: 'item',
+          backgroundColor: 'rgba(255,255,255,0.95)',
+          borderColor: '#eee',
+          borderWidth: 1,
+          textStyle: { color: '#333', fontSize: 13 },
+          formatter: function(params) {
+            return `<div style="font-weight:600;margin-bottom:4px;">${params.data.name}</div>
+                    <span style="color:#999;">Date:</span> ${params.data.value[0]}<br/>
+                    <span style="color:#999;">Cited:</span> ${params.data.value[1]}`;
+          }
+        },
+        grid: { left: 60, right: 30, top: 20, bottom: 50 },
+        xAxis: {
+          type: 'time',
+          name: 'Release Date',
+          nameLocation: 'center',
+          nameGap: 35,
+          nameTextStyle: { fontSize: 13, color: '#666' },
+          axisLine: { lineStyle: { color: '#ddd' } },
+          axisTick: { lineStyle: { color: '#ddd' } },
+          axisLabel: { color: '#666', fontSize: 12 },
+          splitLine: { show: true, lineStyle: { color: '#f5f5f5' } },
+          min: currentMinDate.toISOString().split('T')[0],
+          max: currentMaxDate.toISOString().split('T')[0],
+        },
+        yAxis: {
+          type: 'value',
+          name: 'Cited Number',
+          nameLocation: 'center',
+          nameGap: 45,
+          nameTextStyle: { fontSize: 13, color: '#666' },
+          axisLine: { lineStyle: { color: '#ddd' } },
+          axisTick: { lineStyle: { color: '#ddd' } },
+          axisLabel: {
+            color: '#666', fontSize: 12,
+            formatter: v => v === 0 ? '' : (v >= 1000 ? (v / 1000) + 'k' : v)
+          },
+          splitLine: { lineStyle: { color: '#f5f5f5' } },
+          min: 0,
+          max: scoreMax * 6 / 5,
+          interval: scoreMax / 5
+        },
+        series: series,
+      };
+
+      chart.setOption(option, true);
+    }
+
+    // Click on chart point to show paper/github links
+    let clickedDataPoint = false;
+
+    chart.on('click', function(params) {
+      const paperInfo = document.getElementById('paperInfo');
+      const paperTitle = document.getElementById('paperTitle');
+      const paperLink = document.getElementById('paperLink');
+      const githubLink = document.getElementById('githubLink');
+
+      if (params.data && (params.data.paper || params.data.github)) {
+        clickedDataPoint = true;
+        paperTitle.textContent = params.data.name;
+        if (params.data.paper) {
+          paperLink.href = params.data.paper;
+          paperLink.style.display = 'inline-flex';
+        } else {
+          paperLink.style.display = 'none';
+        }
+        if (params.data.github) {
+          githubLink.href = params.data.github;
+          githubLink.style.display = 'inline-flex';
+        } else {
+          githubLink.style.display = 'none';
+        }
+        paperInfo.style.display = 'block';
+      }
+    });
+
+    // Hide paper panel when clicking anywhere except a data point
+    document.addEventListener('click', function(e) {
+      if (clickedDataPoint) {
+        clickedDataPoint = false;
+        return;
+      }
+      const paperInfo = document.getElementById('paperInfo');
+      paperInfo.style.display = 'none';
+    });
+
+    // Org checkboxes
+    orgCheckboxContainer.addEventListener('change', function(e) {
+      if (e.target.type === 'checkbox') {
+        const org = e.target.dataset.org;
+        const parent = e.target.dataset.parent;
+        if (e.target.checked) {
+          selectedOrgs.add(org);
+        } else {
+          selectedOrgs.delete(org);
+        }
+        // If parent checkbox toggled, also toggle all children
+        if (!parent) {
+          const category = exploreCategories[currentExplore].items.find(g => g.name === org);
+          if (category && category.children.length > 0) {
+            const childCheckboxes = orgCheckboxContainer.querySelectorAll(`input[data-parent="${org}"]`);
+            childCheckboxes.forEach(cb => {
+              cb.checked = e.target.checked;
+              if (e.target.checked) {
+                selectedOrgs.add(cb.dataset.org);
+              } else {
+                selectedOrgs.delete(cb.dataset.org);
+              }
+            });
+          }
+        }
+        render();
+      }
+    });
+
+    // Time sliders
+    const timeMinSlider = document.getElementById('timeMinSlider');
+    const timeMinLabel = document.getElementById('timeMinLabel');
+    timeMinSlider.addEventListener('input', function() {
+      if (parseInt(this.value) >= parseInt(timeSlider.value)) {
+        this.value = parseInt(timeSlider.value) - 1;
+        return;
+      }
+      const pct = this.value / 100;
+      const range = maxDate.getTime() - minDate.getTime();
+      currentMinDate = new Date(minDate.getTime() + range * pct);
+      const year = currentMinDate.getFullYear();
+      const month = String(currentMinDate.getMonth() + 1).padStart(2, '0');
+      timeMinLabel.textContent = `${year}-${month}`;
+      render();
+    });
+
+    const timeSlider = document.getElementById('timeSlider');
+    const timeLabel = document.getElementById('timeLabel');
+    timeSlider.addEventListener('input', function() {
+      if (parseInt(this.value) <= parseInt(timeMinSlider.value)) {
+        this.value = parseInt(timeMinSlider.value) + 1;
+        return;
+      }
+      const pct = this.value / 100;
+      const range = maxDate.getTime() - minDate.getTime();
+      currentMaxDate = new Date(minDate.getTime() + range * pct);
+      const year = currentMaxDate.getFullYear();
+      const month = String(currentMaxDate.getMonth() + 1).padStart(2, '0');
+      timeLabel.textContent = `${year}-${month}`;
+      render();
+    });
+
+    // Citation max slider — snaps to 50, 100, 200, 300, ..., 12000
+    const scoreMaxSlider = document.getElementById('scoreMaxSlider');
+    const scoreMaxLabel = document.getElementById('scoreMaxLabel');
+    scoreMaxSlider.min = 0;
+    scoreMaxSlider.max = citationSnaps.length - 1;
+    scoreMaxSlider.step = 1;
+    const _defaultMaxIdx = citationSnaps.indexOf(scoreMax);
+    scoreMaxSlider.value = _defaultMaxIdx >= 0 ? _defaultMaxIdx : citationSnaps.length - 1;
+    scoreMaxLabel.textContent = scoreMax.toLocaleString();
+
+    scoreMaxSlider.addEventListener('input', function() {
+      const idx = parseInt(this.value);
+      scoreMax = citationSnaps[idx];
+      scoreMaxLabel.textContent = scoreMax.toLocaleString();
+      render();
+    });
+
+    // Toggles
+    document.getElementById('toggleLabels').addEventListener('change', function() {
+      showLabels = this.checked;
+      render();
+    });
+    document.getElementById('toggleLines').addEventListener('change', function() {
+      showLines = this.checked;
+      render();
+    });
+
+    // Point size
+    document.getElementById('sizeSlider').addEventListener('input', function() {
+      pointSize = parseInt(this.value);
+      render();
+    });
+
+    // Chart type buttons
+    document.querySelectorAll('.toolbar-btn[data-chart]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.toolbar-btn[data-chart]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        chartType = this.dataset.chart;
+        render();
+      });
+    });
+
+    // Download
+    document.getElementById('btnDownload').addEventListener('click', function() {
+      const url = chart.getDataURL({ type: 'png', pixelRatio: 2 });
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'capabilities-index.png';
+      a.click();
+    });
+
+    // Share
+    document.getElementById('btnShare').addEventListener('click', function() {
+      navigator.clipboard.writeText(window.location.href);
+      this.textContent = 'Copied!';
+      setTimeout(() => this.textContent = 'Share', 1500);
+    });
+
+    // Explore by chips
+    document.getElementById('exploreByChips').addEventListener('click', function(e) {
+      const chip = e.target.closest('.chip');
+      if (!chip) return;
+      this.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentExplore = chip.dataset.explore;
+      buildOrgCheckboxes();
+      buildLegend();
+      render();
+    });
+
+    // Responsive
+    window.addEventListener('resize', () => chart.resize());
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

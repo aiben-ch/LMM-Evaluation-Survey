@@ -11,6 +11,11 @@ This repository complements the paper *Large Multimodal Models Evaluation: A Sur
 **Project Page:** [AIBench / LMM Evaluation Survey](https://github.com/aiben-ch/LMM-Evaluation-Survey)
 
 ---
+
+## Live Demo: 
+[Live Demo](https://luv-oct22.github.io/LMM-Evaluation-Survey/)
+
+---
 ## Contributions
 
 We welcome pull requests (PRs)! If you contribute five or more valid benchmarks with relevant details, your contribution will be acknowledged in the next update of the paper's Acknowledgment section.
@@ -71,6 +76,7 @@ If you find our work useful, please cite our paper as:
   - [Leaderboards and Tools](#leaderboards-and-tools)
 
 ---
+
 
 ## Understanding Evaluation
 
