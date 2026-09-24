@@ -495,6 +495,8 @@ If you find our work useful, please cite our paper as:
 | :--------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |                     Self-rag                      | [Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](https://arxiv.org/abs/2310.11511) |      [GitHub](https://github.com/AkariAsai/self-rag)       |
 |                     AMEM                    | [A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) |      [GitHub](https://github.com/agiresearch/A-mem)       |
+|                     AI4AI-Bench                    | [AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement](https://arxiv.org/abs/2608.20318) |      [Project Page](https://lab.einsia.ai/ai4ai/)       |
+|                     AutoResearchEval                    | [How Do Agents Fail on AutoResearch: End-to-End Diagnostic Evaluation on 100 Real-World Frontier Research Tasks](https://arxiv.org/abs/2608.14905) |      [GitHub](https://github.com/PrentisAI/AutoResearchEval)       |
 
 ## Generation Evaluation
 
