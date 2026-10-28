@@ -489,12 +489,14 @@ If you find our work useful, please cite our paper as:
 | NeurIPS 2025 Embodied Agent Interface Challenge |       NeurIPS 2025 Embodied Agent Interface Challenge        |       [Project Page](https://neurips25-eai.github.io/)       |
 |  SEER-Bench  |       [Vision to Geometry: 3D Spatial Memory for Sequential Embodied MLLM Reasoning and Exploration](https://arxiv.org/abs/2512.02458)        |       *Not available*      |
 |  ReMindView-Bench   |       [Reasoning Path and Latent State Analysis for Multi-view Visual Spatial Reasoning: A Cognitive Science Perspective](https://arxiv.org/abs/2512.02340)        |     [Github](https://github.com/pittisl/ReMindView-Bench)     |
+|                       SEAR                       | [SEAR: Self-Evolving Agentic Robotics](https://arxiv.org/abs/2610.18792) |             [Project Page](https://sear.bot/)              |
   
 #### AI Agent
 |                      Benchmark                       |                            Paper                             |                         Project Page                         |
 | :--------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |                     Self-rag                      | [Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](https://arxiv.org/abs/2310.11511) |      [GitHub](https://github.com/AkariAsai/self-rag)       |
 |                     AMEM                    | [A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) |      [GitHub](https://github.com/agiresearch/A-mem)       |
+|                       ASB                        | [Autonomous Science Bench: Evaluating AI Agents for Autonomous Scientific Discovery](https://arxiv.org/abs/2610.18449) | [Project Page](https://yibow.me/autonomous-science-bench)  |
 
 ## Generation Evaluation
 
