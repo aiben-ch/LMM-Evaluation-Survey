@@ -595,6 +595,10 @@ If you find our work useful, please cite our paper as:
 | OpenVE-Bench | [OpenVE-3M: A Large-Scale High-Quality Dataset for Instruction-Guided Video Editing](https://arxiv.org/abs/2512.07826) | [Github](https://lewandofskee.github.io/projects/OpenVE/) |
 | RVE-Bench |  [ReViSE: Towards Reason-Informed Video Editing in Unified Models with Self-Reflective Learning](https://arxiv.org/abs/2512.09924) | [Github](https://github.com/Liuxinyv/ReViSE) |
 |                    VC-Bench                    | [VC-Bench: Pioneering the Video Connecting Benchmark with a Dataset and Evaluation Metrics](https://arxiv.org/abs/2601.19236) |    [GitHub](https://github.com/kevinson7515/VC-Bench)    |
+| PRISM-Bench | [PRISM-Bench: An Audio-Centric Diagnostic Benchmark for Text-to-Audio-Video Generation](https://arxiv.org/abs/2609.04867) | [Leaderboard, demos and evaluation code](https://huggingface.co/spaces/prismbench/prismbench-leaderboard) |
+| TAVGBench | [TAVGBench: Benchmarking Text to Audible-Video Generation](https://arxiv.org/abs/2404.14381) | [GitHub](https://github.com/OpenNLPLab/TAVGBench) |
+| T2AV-Compass | [T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation](https://arxiv.org/abs/2512.21094) | [GitHub](https://github.com/NJU-LINK/T2AV-Compass) |
+| PhyAVBench | [PhyAVBench: A Challenging Audio Physics-Sensitivity Benchmark for Physically Grounded Text-to-Audio-Video Generation](https://arxiv.org/abs/2512.23994) | [GitHub](https://github.com/imxtx/PhyAVBench) |
 
 ### Audio
 
